@@ -1,9 +1,10 @@
-import { Router } from 'express';
-import { getAllDados } from '../controller/controller.js';
+import express from 'express';
+import sampleDados from './sampleDados.js';
 
-const router = Router();
+const router = express.Router();
 
-//rota para retornar os dados
-router.get('/', getAllDados);
+router.get('/', (req, res) => {
+  res.json(sampleDados);
+});
 
 export default router;
